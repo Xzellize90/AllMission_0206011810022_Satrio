@@ -25,10 +25,11 @@ class _MyAppState extends State<MyApp>with SingleTickerProviderStateMixin {
             children: <Widget>[
             Container(
               decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("images/background.jpg"),
-              fit: BoxFit.cover,
-                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[Colors.black26, Colors.black87]
+                )
               ),
             ),
           Column(
