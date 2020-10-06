@@ -12,12 +12,12 @@ class _poState extends State<po> {
   var nama;
   var email;
   var nicname;
-  var alamat;
+  var telfon;
 
   final namaCon = new TextEditingController();
   final emailCon = new TextEditingController();
   final nicnameCon = new TextEditingController();
-  final alamatCon = new TextEditingController();
+  final telfonCon = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class _poState extends State<po> {
                             prefixStyle: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.w600
                           ),
-                        labelText: "Alamat Email",
+                        labelText: "telfon Email",
                         hintStyle: TextStyle(fontSize: 12),
                         border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)
@@ -133,7 +133,8 @@ class _poState extends State<po> {
                   child: Column(
                     children: <Widget>[
                       TextField(
-                        controller: alamatCon,
+                        controller: telfonCon,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
@@ -142,12 +143,12 @@ class _poState extends State<po> {
                           height: 5,
                           color: Colors.red,
                           ),
-                            prefixIcon: Icon(Icons.home),
-                            prefixText: "Alamat :",
+                            prefixIcon: Icon(Icons.phone),
+                            prefixText: "Telfon :",
                             prefixStyle: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.w600
                           ),
-                        labelText: "Alamat Lengkap",
+                        labelText: "Nomor Telfon",
                         hintStyle: TextStyle(fontSize: 12),
                         border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)
@@ -163,6 +164,7 @@ class _poState extends State<po> {
                   child: Container(
                     margin: EdgeInsets.only(top: 10),
                     child: RaisedButton(
+                      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50)),
                       child: Text("Pre Order",style: TextStyle(color: Colors.grey)),
                       color: Colors.yellowAccent,
                       onPressed: (){
@@ -170,10 +172,9 @@ class _poState extends State<po> {
                           nama = namaCon.text;
                           email = emailCon.text;
                           nicname = nicnameCon.text;
-                          alamat = alamatCon.text;
+                          telfon = telfonCon.text;
                         });
-
-                        if(nama != "" || email != "" || nicname != "" || alamat != ""){
+                        if(nama != "" && email != "" && nicname != "" && telfon != ""){
                           return showDialog(
                             context: context,
                             builder: (context) {
@@ -183,7 +184,7 @@ class _poState extends State<po> {
                                   overflow: Overflow.visible,
                                   children: <Widget>[
                                      Container(
-                                  height: 230,
+                                  height: 200,
                                   width: 190,
                                     child: Column(
                                       children: <Widget>[
@@ -192,7 +193,7 @@ class _poState extends State<po> {
                                         new Text("Selamat $nama",style: TextStyle(fontSize: 14), textAlign: TextAlign.left,),
                                         new Text("Email: $email",style: TextStyle(fontSize: 14), textAlign: TextAlign.left,),
                                         new Text("NickName Steam: $nicname",style: TextStyle(fontSize: 14), textAlign: TextAlign.left,),
-                                        new Text("Alamat: $alamat",style: TextStyle(fontSize: 14), textAlign: TextAlign.left,),
+                                        new Text("telfon: $telfon",style: TextStyle(fontSize: 14), textAlign: TextAlign.left,),
                                         Container(
                                           alignment: Alignment.bottomCenter,
                                           child: FlatButton(
@@ -224,13 +225,13 @@ class _poState extends State<po> {
                                   overflow: Overflow.visible,
                                   children: <Widget>[
                                      Container(
-                                  height: 230,
+                                  height: 200,
                                   width: 190,
                                     child: Column(
                                       children: <Widget>[
                                         SizedBox(height: 20,),
                                         new Text("Eror!", textAlign: TextAlign.center, style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Colors.yellow),),
-                                        new Text("All Field Must Be Filled",style: TextStyle(fontSize: 14,color: Colors.red), textAlign: TextAlign.left,),
+                                        new Text("All Field Must Be Filled",style: TextStyle(fontSize: 20,color: Colors.red), textAlign: TextAlign.center,),
                                         Container(
                                           alignment: Alignment.bottomCenter,
                                           child: FlatButton(

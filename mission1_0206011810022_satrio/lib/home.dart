@@ -169,16 +169,21 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                   _hasBeenPressed = !_hasBeenPressed;
                 });}),
             ),
-            const SizedBox(height: 30),
+  
             Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+              ),
               alignment: Alignment.bottomRight,
               margin: EdgeInsets.only(bottom: 12, right: 10),
               child: RaisedButton(
+                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50)),
                 onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context){return po();}));}, 
             textColor: Colors.blueAccent,
-            padding: const EdgeInsets.all(0.0),
+            padding:  EdgeInsets.all(0.0),
             child: Container(
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
                 gradient: LinearGradient(
                   colors: <Color>[
                     Colors.yellowAccent,
@@ -186,9 +191,9 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                   ],
                 ),
               ),
-              padding: const EdgeInsets.all(10.0),
+              padding:  EdgeInsets.all(10.0),
               child:
-                  const Text('Pre Order', style: TextStyle(fontSize: 20)),
+                   Text('Pre Order', style: TextStyle(fontSize: 20)),
             ),
               ),
             ),
