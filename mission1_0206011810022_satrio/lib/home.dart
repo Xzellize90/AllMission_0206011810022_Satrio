@@ -171,8 +171,8 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
             ),
             Container(
               alignment: Alignment.bottomRight,
-              margin: EdgeInsets.only(bottom: 25, right: 25),
-              child: RaisedButton(
+              margin: EdgeInsets.only(bottom: 25),
+              child: FlatButton(
                 color: Colors.transparent,
                   child: Container(
               decoration:  BoxDecoration(
