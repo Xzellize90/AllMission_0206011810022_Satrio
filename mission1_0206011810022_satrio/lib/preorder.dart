@@ -105,9 +105,7 @@ class _poState extends State<po> {
                         decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          suffix: Container(
-                          width: 5,
-                          height: 5,
+                          suffix: Container(width: 5,height: 5,
                           color: Colors.red,
                           ),
                             prefixIcon: Icon(Icons.person),

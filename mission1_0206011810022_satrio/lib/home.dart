@@ -169,19 +169,15 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                   _hasBeenPressed = !_hasBeenPressed;
                 });}),
             ),
-  
+
+
+
             Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-              ),
               alignment: Alignment.bottomRight,
-              margin: EdgeInsets.only(bottom: 12, right: 10),
+              margin: EdgeInsets.only(bottom: 25, right: 25),
               child: RaisedButton(
-                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50)),
-                onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context){return po();}));}, 
-            textColor: Colors.blueAccent,
-            padding:  EdgeInsets.all(0.0),
-            child: Container(
+                color: Colors.transparent,
+                  child: Container(
               decoration:  BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 gradient: LinearGradient(
@@ -195,7 +191,12 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
               child:
                    Text('Pre Order', style: TextStyle(fontSize: 20)),
             ),
-              ),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return po();
+                    }));
+                  }),
             ),
           ],
           ),
