@@ -169,9 +169,6 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                   _hasBeenPressed = !_hasBeenPressed;
                 });}),
             ),
-
-
-
             Container(
               alignment: Alignment.bottomRight,
               margin: EdgeInsets.only(bottom: 25, right: 25),
